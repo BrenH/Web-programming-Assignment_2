@@ -1,63 +1,89 @@
+//CSS Styles Document.
+//(C)Brendan Heslop 2015.
+
+
+//----------
+//Variables.
+//----------
 @primaryColor: #b62537;;
 @secondaryColor: rgb(41, 128, 185);
 
+
+//--------------
+//Media Queries.
+//--------------
 @media screen and (max-width: 872px) {
-	nav li {
-		width: 100%;
-	}
-	nav li a {
-		padding: 10px 0px 8px 0px;
-	}
+	nav {
+  		li {
+			width: 100%;
+			a {
+				padding: 10px 0px 8px 0px;
+			}
+        }
+    }
 	main {
 		width: 90%;
 		margin: 20px 5% 20px 5%;
 	}
-	#index main img {
+  	#index {
+      	main {
+			img {
 		width: 45%;
 		margin: 0 5% 0 0;
 		float: left;
+            }
+        }
 	}
 	aside {
 		width: 90%;
 		margin: 20px 5% 20px 5%;
 		color: rgb(41, 128, 185);
 		font-size: 1.2em;
-	}
-	aside img { 
-		width: 50px;
-		margin-left: 5%;
+      	img { 
+			width: 50px;
+			margin-left: 5%;
+		}
 	}
 }
 @media screen and (min-width: 872px) {
-	nav li {
-		width: 11.11111111111111%;
-	}
-	nav li a {
-		padding: 20px 0px 18px 0px;
-	}
+	nav {
+      	li {
+			width: 11.11111111111111%;
+			a {
+				padding: 20px 0px 18px 0px;
+        	}
+		}
+    }
 	main {
 		margin: 20px 5% 20px 2.5%;
 		width: 57.5%;
 	}
-	#index main img {
+	#index {
+      	main {
+			img {
 		width: 25%;
 		margin: 0 5% 1% 0;
 		float: left;
+            }
+        }
 	}
 	aside {
 		width: 27.5%;
 		margin: 20px 2.5% 20px 5%;
 		color: rgb(41, 128, 185);
 		font-size: 1.2em;
+      	img {
+			float: right;
+			width: 20%;
+			margin-left: 10%;
+		}
 	}
-	aside img {
-	float: right;
-	width: 20%;
-	margin-left: 10%;
-}
 }
 
 
+//------------------------------------
+//General Style, ID, and Class values.
+//------------------------------------
 body {
 	background: url('../images/background.png') no-repeat center center fixed; 
 	-webkit-background-size: cover;
@@ -76,35 +102,39 @@ body {
 }
 nav {
 	width: 100%;
-}
-#current,
-nav li:hover {
-	background-color: #3d4751;
-	border-bottom: 2px solid #3399ff;
-}
-nav ul {
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	font-family: 'Open Sans';
-}
-nav li {
-	float: left;
-	background-color: @primaryColor;
-	display: inline;
-	margin: 0px;
-	color: white;
-	border-bottom: 2px solid #b62537;
-	transition: all 0.15s ease;
-	font-size: 1.1em;
-	font-weight: 600;
-}
-nav li a {
-	width: 100%;
-	text-align: center;
-	display: inline-block;
-	color: inherit;
-	text-decoration: none;
+  	ul {
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Open Sans';
+	}
+  	li {
+		float: left;
+		background-color: @primaryColor;
+		display: inline;
+		margin: 0px;
+		color: white;
+		border-bottom: 2px solid #b62537;
+		transition: all 0.15s ease;
+		font-size: 1.1em;
+		font-weight: 600;
+  		
+		&:hover {
+			background-color: #3d4751;
+			border-bottom: 2px solid #3399ff;
+		}
+      	a {
+			width: 100%;
+			text-align: center;
+			display: inline-block;
+			color: inherit;
+			text-decoration: none;
+		}
+    }
+  	#current {
+		background-color: #3d4751;
+		border-bottom: 2px solid #3399ff;
+	}
 }
 a {
 	color: @secondaryColor;
@@ -129,30 +159,40 @@ hr {
 main {
 	float: right;
 }
-#index main img {
-	float: left;
+#index {
+  	main {
+      	img {
+			float: left;
+		}
+    }
 }
-#blog main img {
-	width: 100%;
+#blog {
+  	main {
+      	img {
+			width: 100%;
+        }
+    }
 }
 iframe {
 	width: 100%;
 	height: 400px;
 }
-#faq li {
-	margin-bottom: 2%;
+#faq {
+  	li {
+		margin-bottom: 2%;
+    }
 }
 aside {
 	float: left;
 	color: @secondaryColor;
 	font-size: 1.2em;
+ 	img {
+		float: right;
+    }
 }
 #logo {
 	width: 100%;
 	margin: 0;
-}
-aside img {
-	float: right;
 }
 .overflow-catch {
 	clear: both;
@@ -164,7 +204,7 @@ footer {
 	margin: 0 auto;
 	text-align: center;
 	padding: 2% 5%;
-}
-footer b {
-	color: @secondaryColor;
+  	b {
+		color: @secondaryColor;
+	}
 }
